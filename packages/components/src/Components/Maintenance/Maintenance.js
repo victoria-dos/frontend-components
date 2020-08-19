@@ -9,7 +9,7 @@ import { HourglassHalfIcon } from '@patternfly/react-icons';
 
 import './maintenance.scss';
 
-const Maintenance = ({ startTime, endTime, timeZone, description }) => {
+const Maintenance = ({ startTime, endTime, udcStartTime, udcEndTime, timeZone, description }) => {
     return (
         <EmptyState className='ins-c-empty-state__maintenance'>
             <EmptyStateIcon icon={HourglassHalfIcon}/>
@@ -18,8 +18,10 @@ const Maintenance = ({ startTime, endTime, timeZone, description }) => {
                 { description
                     ? description
                     : <Stack>
-                        <StackItem>We are currently undergoing scheduled maintenance from {startTime}-{endTime} {timeZone}.</StackItem>
+                        <StackItem>We are currently undergoing scheduled maintenance and will be</StackItem>
+                        <StackItemn>unavailable from {utcStartTime}-{utcEndTime} UTC ({startTime}-{endTime} {timeZone}). </StackItemn>
                         <StackItem>We will be back shortly, thank you for your patience.</StackItem>
+                        <StackItem>For more information, please visit <a href="status.redhat.com">status.redhat.com</a>.</StackItem>
                     </Stack>
                 }
             </EmptyStateBody>
@@ -30,8 +32,10 @@ const Maintenance = ({ startTime, endTime, timeZone, description }) => {
 Maintenance.propTypes = {
     startTime: propTypes.string,
     endTime: propTypes.string,
+    utcStartTime: propTypes.string,
+    utcEndTime: prop.types.string,
     timeZone: propTypes.string,
-    description: propTypes.node
+    description: propTypes.node,
 };
 
 Maintenance.defaultProps = {

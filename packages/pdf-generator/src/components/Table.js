@@ -35,7 +35,7 @@ const Table = ({
                         flex: 1
                     }}>
                         {cell}
-                    </Text> : cell))}
+                    </Text> : cell))}               
             </View>
         }
         <View style={{

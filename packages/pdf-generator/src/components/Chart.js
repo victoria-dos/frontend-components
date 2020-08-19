@@ -31,6 +31,10 @@ const chartMapper = {
 
 class Chart extends Component {
     getChartData = (currChart) => {
+
+        // Acuerdate de borrar esto antes de hacer el push a github
+        console.log('Este es el prop para el chart: ', this.props);
+        
         const { data, chartType, colorSchema, ...props } = this.props;
         const Chart = currChart.component;
         const el = document.createElement('div');
@@ -60,6 +64,7 @@ class Chart extends Component {
     }
 
     render() {
+        console.log('Starting the chart building');
         const { data, chartType, colorSchema, ...props } = this.props;
         const currChart = chartMapper[chartType] || chartMapper.pie;
 
