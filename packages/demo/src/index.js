@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import ErrorTest from './errorTest';
 import { treeTable, TreeRowWrapper, sizeCalculator, collapseBuilder } from '../../components/src/Components/TreeTable';
 import './index.scss';
 import {
@@ -67,19 +68,30 @@ class MyCmp extends Component {
         });
     }
 
+    // render() {
+    //     const { cells, rows } = this.state;
+    //     return (
+    //         <Table
+    //             className="pf-m-expandable pf-c-treeview"
+    //             rowWrapper={TreeRowWrapper}
+    //             aria-label="Simple Table"
+    //             cells={cells}
+    //             rows={sizeCalculator(rows)}
+    //         >
+    //             <TableHeader />
+    //             <TableBody />
+    //         </Table>
+    //     );
+
+        
+    // }
+
     render() {
-        const { cells, rows } = this.state;
-        return (
-            <Table
-                className="pf-m-expandable pf-c-treeview"
-                rowWrapper={TreeRowWrapper}
-                aria-label="Simple Table"
-                cells={cells}
-                rows={sizeCalculator(rows)}
-            >
-                <TableHeader />
-                <TableBody />
-            </Table>
+        
+         return(
+            <>
+                <ErrorTest />
+            </>
         );
     }
 }
