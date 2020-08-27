@@ -14,7 +14,17 @@ import {
     EmptyStateSecondaryActions
   } from '@patternfly/react-core';
 
+
+
 const Error = ({errorTitle, errorDescription}) => { 
+    const [webPosition, setWebPosition] = useState(true);
+
+    const handleReturn = () => {
+        if(webPosition){
+            console.log('Going back to previous page now!! Flag: ', webPosition);
+            
+        }
+    }
     
     const renderButtonLabel = () => {
         return('Go back!');

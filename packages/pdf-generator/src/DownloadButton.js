@@ -15,8 +15,7 @@ class DownloadButton extends React.Component {
             isPreview,
             asyncFunction,
             buttonProps,
-            ...props
-        } = this.props;
+            ...props } = this.props;
 
         return (
             <React.Fragment>
