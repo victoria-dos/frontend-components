@@ -44,10 +44,10 @@ module.exports = ({
             App: appEntry
         },
         output: {
-            filename: 'js/[name].js',
+            filename: 'js/[name]-[contenthash].js',
             path: `${rootFolder || ''}/dist`,
             publicPath,
-            chunkFilename: 'js/[name].js'
+            chunkFilename: 'js/[name]-[contenthash].js'
         },
         module: {
             rules: [{
@@ -74,7 +74,7 @@ module.exports = ({
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: '[name].[ext]',
+                        name: '[name]-[contenthash].[ext]',
                         outputPath: 'fonts/'
                     }
                 }]

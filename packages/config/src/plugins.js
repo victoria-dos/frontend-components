@@ -14,8 +14,8 @@ const LodashWebpackPlugin = new(require('lodash-webpack-plugin'))({
     shorthands: true
 });
 const ExtractCssWebpackPlugin = new(require('mini-css-extract-plugin'))({
-    chunkFilename: 'css/[name].css',
-    filename: 'css/[name].css'
+    chunkFilename: 'css/[name]-[contenthash].css',
+    filename: 'css/[name]-[contenthash].css'
 });
 const CleanWebpackPlugin = new(require('clean-webpack-plugin'))();
 const WebpackHotModuleReplacement = new HotModuleReplacementPlugin();
