@@ -6,6 +6,7 @@ import NotificationPortal from '@redhat-cloud-services/frontend-components-notif
 import notificationsMiddleware from '@redhat-cloud-services/frontend-components-notifications/notificationsMiddleware';
 import { notificationsReducer, notificationActions } from '@redhat-cloud-services/frontend-components-notifications/redux';
 import ReducerRegistry from '@redhat-cloud-services/frontend-components-utilities/ReducerRegistry';
+import FilterDropdown from '@redhat-cloud-services/frontend-components/FilterDropdown';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -39,6 +40,12 @@ const MyCmp = () => {
   return (
     <Provider store={store}>
       <NotificationPortal />
+      <FilterDropdown
+        filters={{}}
+        addFilter={console.log}
+        removeFilter={console.log}
+        filterCategories={[{ title: '', type: '', urlParam: '', values: [{ label: '', value: '' }] }]}
+      />
       <App />
     </Provider>
   );
